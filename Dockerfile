@@ -7,6 +7,10 @@ RUN pip install jupyter_contrib_nbextensions && \
     # can modify or enable additional extensions here
     jupyter nbextension enable spellchecker/main --user
 
+# Remove distutil package because pip do not remove them safely and 
+# I need a newer version to fix security bug
+RUN conda remove pyyaml -y
+
 # Install from requirements.txt file
 COPY requirements.txt /tmp/
 RUN pip install --requirement /tmp/requirements.txt && \
