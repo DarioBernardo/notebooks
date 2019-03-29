@@ -10,7 +10,7 @@ build: ## Build the container
 	docker build -t $(APP_NAME) .
 
 lab: build
-	docker run -i -t --rm -p=$(PORT):$(PORT) -v ${PWD}:/home/jovyan --name="$(APP_NAME)" $(APP_NAME) start.sh jupyter lab
+	docker run -i -t --rm -p=$(PORT):$(PORT) -v ${PWD}:/home/dario --name="$(APP_NAME)" $(APP_NAME) jupyter lab --ip=0.0.0.0 --port=$(PORT) --NotebookApp.token='' --NotebookApp.password=''
 
 stop: ## Stop and remove a running container
 	docker stop $(APP_NAME)
