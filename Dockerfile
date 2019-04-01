@@ -30,6 +30,8 @@ ENV SHELL=/bin/bash \
 
 RUN pip install jupyterlab
 
+ADD nb_setup/* /usr/local/lib/python3.7/site-packages/jupyter_contrib_nbextensions/setup/
+
 RUN pip install jupyter_contrib_nbextensions && \
     jupyter contrib nbextension install && \
     jupyter nbextensions_configurator enable && \
@@ -39,8 +41,7 @@ RUN pip install jupyter_contrib_nbextensions && \
 # Install from requirements.txt file
 COPY requirements.txt /tmp/
 RUN pip install --requirement /tmp/requirements.txt 
-	
+
 RUN useradd -ms /bin/bash $NB_USER
 USER $NB_UID
 WORKDIR /home/$NB_USER
-
