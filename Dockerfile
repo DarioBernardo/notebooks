@@ -28,7 +28,7 @@ ENV SHELL=/bin/bash \
     LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 
 
-RUN pip install jupyterlab
+RUN pip install jupyterlab jupyterlab-git
 
 ADD nb_setup/* /usr/local/lib/python3.7/site-packages/jupyter_contrib_nbextensions/setup/
 
@@ -36,7 +36,10 @@ RUN pip install jupyter_contrib_nbextensions && \
     jupyter contrib nbextension install && \
     jupyter nbextensions_configurator enable && \
     # can modify or enable additional extensions here
-    jupyter nbextension enable spellchecker/main 
+    jupyter nbextension enable spellchecker/main && \
+    jupyter labextension install @jupyterlab/git && \
+    jupyter serverextension enable --py jupyterlab_git && \
+    jupyter labextension enable spellchecker/main
 	
 # Install from requirements.txt file
 COPY requirements.txt /tmp/
