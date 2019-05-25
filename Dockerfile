@@ -28,6 +28,8 @@ ENV SHELL=/bin/bash \
     LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 
 
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y nodejs
+
 RUN pip install jupyterlab jupyterlab-git
 
 ADD nb_setup/* /usr/local/lib/python3.7/site-packages/jupyter_contrib_nbextensions/setup/
