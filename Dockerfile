@@ -9,8 +9,9 @@ RUN apt-get update && apt-get -yq dist-upgrade \
     sudo \
     locales \
     fonts-liberation \
-	curl \
-    python3 \
+    curl \
+    build-essential \
+    python3-dev \
     python3-pip \
  && rm -rf /var/lib/apt/lists/*
 
@@ -41,7 +42,7 @@ RUN pip install jupyter_contrib_nbextensions && \
     jupyter nbextension enable spellchecker/main && \
     jupyter labextension install @jupyterlab/git && \
     jupyter serverextension enable --py jupyterlab_git && \
-    jupyter labextension enable spellchecker/main
+    jupyter labextension install @ijmbarr/jupyterlab_spellchecker
 	
 # Install from requirements.txt file
 COPY requirements.txt /tmp/
