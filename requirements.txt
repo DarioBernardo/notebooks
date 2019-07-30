@@ -1,4 +1,4 @@
-fbprophet==0.4.post2
+#fbprophet==0.4
 Keras==2.2.4
 Keras-Applications==1.0.7
 Keras-Preprocessing==1.0.9
@@ -7,7 +7,7 @@ numpy==1.16.2
 pandas==0.23.4
 pymatch==0.3.3
 pymc3==3.6
-pystan==2.18.1.0
+#pystan==2.14
 python-dateutil==2.8.0
 PyYAML==5.1b5
 scikit-learn==0.20.3
@@ -23,3 +23,5 @@ tornado==6.0.2
 tqdm==4.31.1
 urllib3==1.24.1
 xgboost==0.82
+pulp
+requests
