@@ -6,5 +6,5 @@ This repository contains a list of notebooks explaining the intuition behind var
 *  chi-squared: explaining intuition behind chi-squared, how it is calculated in python and when it is usefull to use it.
 *  t-test: explaining intuition behind t-test, how it is calculated in python and when it is usefull to use it.
 *  uncertainty_estimation_test: explaining intuition behind uncertainty estimation and ways to calculate it in python.
-*  uncertainty_estimation_test: explaining intuition behind uncertainty estimation and ways to calculate it in python.
+*  bayesian: a folder containing various bayesian examples.
 *  multiconstrained_optimisation_fantasy_football: example notebook solving a multiconstrained optimisation problem.
